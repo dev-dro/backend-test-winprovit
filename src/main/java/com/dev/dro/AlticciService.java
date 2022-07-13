@@ -1,5 +1,6 @@
 package com.dev.dro;
 
+import io.quarkus.cache.CacheResult;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,6 +11,7 @@ public class AlticciService {
 
   private static final List<Integer> sequence = new ArrayList<>(Arrays.asList(0, 1, 1));
 
+  @CacheResult(cacheName = "alticci-cache")
   public Integer getAlticciByIndex(Integer index) {
     if (sequence.size() < index) {
       calculateAlticciTillIndex(index);
