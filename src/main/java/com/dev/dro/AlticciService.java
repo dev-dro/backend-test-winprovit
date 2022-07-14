@@ -9,11 +9,11 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class AlticciService {
 
-  private static final List<Integer> sequence = new ArrayList<>(Arrays.asList(0, 1, 1));
+  private static final List<Long> sequence = new ArrayList<>(Arrays.asList(0L, 1L, 1L));
 
   @CacheResult(cacheName = "alticci-cache")
-  public Integer getAlticciByIndex(Integer index) {
-    if (sequence.size() < index) {
+  public Long getAlticciByIndex(Integer index) {
+    if (sequence.size() - 1 < index) {
       calculateAlticciTillIndex(index);
     }
     return sequence.get(index);
