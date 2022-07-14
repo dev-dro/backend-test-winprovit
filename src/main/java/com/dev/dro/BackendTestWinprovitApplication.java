@@ -7,7 +7,7 @@ import org.eclipse.microprofile.openapi.annotations.servers.Server;
 
 @OpenAPIDefinition(
     info = @Info(
-        title = "Example API",
+        title = "Alticci Sequence API",
         version = "1.0.0"
     ),
     servers = {
